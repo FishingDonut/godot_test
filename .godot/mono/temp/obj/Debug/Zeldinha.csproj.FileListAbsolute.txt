@@ -1,0 +1,17 @@
+/home/icequs/Zeldinha/.godot/mono/temp/bin/Debug/Zeldinha.deps.json
+/home/icequs/Zeldinha/.godot/mono/temp/bin/Debug/Zeldinha.runtimeconfig.json
+/home/icequs/Zeldinha/.godot/mono/temp/bin/Debug/Zeldinha.dll
+/home/icequs/Zeldinha/.godot/mono/temp/bin/Debug/Zeldinha.pdb
+/home/icequs/Zeldinha/.godot/mono/temp/bin/Debug/GodotSharp.dll
+/home/icequs/Zeldinha/.godot/mono/temp/bin/Debug/GodotSharpEditor.dll
+/home/icequs/Zeldinha/.godot/mono/temp/obj/Debug/Zeldinha.csproj.AssemblyReference.cache
+/home/icequs/Zeldinha/.godot/mono/temp/obj/Debug/Zeldinha.GeneratedMSBuildEditorConfig.editorconfig
+/home/icequs/Zeldinha/.godot/mono/temp/obj/Debug/Zeldinha.AssemblyInfoInputs.cache
+/home/icequs/Zeldinha/.godot/mono/temp/obj/Debug/Zeldinha.AssemblyInfo.cs
+/home/icequs/Zeldinha/.godot/mono/temp/obj/Debug/Zeldinha.csproj.CoreCompileInputs.cache
+/home/icequs/Zeldinha/.godot/mono/temp/obj/Debug/Zeldinha.csproj.CopyComplete
+/home/icequs/Zeldinha/.godot/mono/temp/obj/Debug/Zeldinha.dll
+/home/icequs/Zeldinha/.godot/mono/temp/obj/Debug/refint/Zeldinha.dll
+/home/icequs/Zeldinha/.godot/mono/temp/obj/Debug/Zeldinha.pdb
+/home/icequs/Zeldinha/.godot/mono/temp/obj/Debug/Zeldinha.genruntimeconfig.cache
+/home/icequs/Zeldinha/.godot/mono/temp/obj/Debug/ref/Zeldinha.dll
