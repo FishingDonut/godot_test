@@ -1,10 +1,6 @@
 res://world_01.tscn
-res://Scripts/Player.cs
-res://Scripts/Player.gd
-res://prefabs/moving_platform.tscn
-res://Scripts/moving_platform.gd
-res://prefabs/coin.tscn
-res://Scripts/coin.gd
+res://prefabs/player.tscn
 res://prefabs/friend.tscn
-res://prefabs/friend.gd
-res://Scripts/friend.gd
+res://prefabs/hitbox.tscn
+res://prefabs/enemy.tscn
+res://Scripts/Hitbox.gd

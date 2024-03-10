@@ -1,13 +1,8 @@
-[gd_scene load_steps=39 format=3 uid="uid://bsel0otsoo5fq"]
+[gd_scene load_steps=20 format=3 uid="uid://bsel0otsoo5fq"]
 
 [ext_resource type="Texture2D" uid="uid://ditsy18whmiak" path="res://Assets/Seasonal Tilesets/1 - Grassland/Terrain (16 x 16).png" id="1_80vbw"]
 [ext_resource type="Texture2D" uid="uid://b4olsxdsyqtf1" path="res://Assets/Seasonal Tilesets/1 - Grassland/Extra_plants (16 x 16).png" id="2_6e0rr"]
 [ext_resource type="Texture2D" uid="uid://bk00sd2q4gnqn" path="res://Assets/Seasonal Tilesets/1 - Grassland/Grassland_entities (16 x 16).png" id="3_5ksmo"]
-[ext_resource type="Script" path="res://Scripts/Player.gd" id="4_8fqgv"]
-[ext_resource type="Texture2D" uid="uid://b0vul1qcbm7xg" path="res://Assets/Sprite Pack 1/1 - Mr. Man/Idle (16 x 16).png" id="5_10wkk"]
-[ext_resource type="Texture2D" uid="uid://bpfh240oo8mi4" path="res://Assets/Sprite Pack 1/1 - Mr. Man/Jumping (16 x 16).png" id="6_f35ad"]
-[ext_resource type="Texture2D" uid="uid://cmlyhv3uv41bk" path="res://Assets/Sprite Pack 1/1 - Mr. Man/Run (16 x 16).png" id="6_p3tuq"]
-[ext_resource type="Texture2D" uid="uid://b4lrnmotgqqud" path="res://Assets/Sprite Pack 1/1 - Mr. Man/Punching (16 x 16).png" id="7_1c4bh"]
 [ext_resource type="Texture2D" uid="uid://b833sww4lc82c" path="res://Assets/Seasonal Tilesets/1 - Grassland/Background parts/5 - Sky_color.png" id="8_6ijt0"]
 [ext_resource type="Texture2D" uid="uid://bb2v87eapid6y" path="res://Assets/Seasonal Tilesets/1 - Grassland/Background parts/4 - Cloud_cover_2.png" id="9_bbjtp"]
 [ext_resource type="Texture2D" uid="uid://prieh1i2uqjb" path="res://Assets/Seasonal Tilesets/1 - Grassland/Background parts/3 - Cloud_cover_1.png" id="10_r4rri"]
@@ -16,6 +11,8 @@
 [ext_resource type="PackedScene" uid="uid://bfrp7r46ugsys" path="res://prefabs/moving_platform.tscn" id="13_t0jk2"]
 [ext_resource type="PackedScene" uid="uid://cvcskd2hu5fgg" path="res://prefabs/coin.tscn" id="15_vd35c"]
 [ext_resource type="PackedScene" uid="uid://cc0xcf2wgpsus" path="res://prefabs/friend.tscn" id="16_b4mtt"]
+[ext_resource type="PackedScene" uid="uid://cycuhveh2vmva" path="res://prefabs/enemy.tscn" id="17_4rohc"]
+[ext_resource type="PackedScene" uid="uid://d0a40t4jyanrm" path="res://prefabs/player.tscn" id="18_uufa1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nqa8j"]
 texture = ExtResource("1_80vbw")
@@ -37,6 +34,7 @@ texture = ExtResource("1_80vbw")
 3:2/0 = 0
 3:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 3:2/0/physics_layer_0/angular_velocity = 0.0
+3:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 4:2/0 = 0
 4:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 4:2/0/physics_layer_0/angular_velocity = 0.0
@@ -346,130 +344,6 @@ void fragment() {
 shader = SubResource("Shader_arjw3")
 shader_parameter/move_speed = 0.02
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_8lihd"]
-size = Vector2(6, 11)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_0hpcy"]
-atlas = ExtResource("5_10wkk")
-region = Rect2(0, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_rct4n"]
-atlas = ExtResource("5_10wkk")
-region = Rect2(16, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_5fpjg"]
-atlas = ExtResource("5_10wkk")
-region = Rect2(32, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_pt613"]
-atlas = ExtResource("5_10wkk")
-region = Rect2(48, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_je0el"]
-atlas = ExtResource("6_f35ad")
-region = Rect2(0, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_xrejc"]
-atlas = ExtResource("7_1c4bh")
-region = Rect2(0, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_hrowp"]
-atlas = ExtResource("7_1c4bh")
-region = Rect2(16, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_lxcvo"]
-atlas = ExtResource("7_1c4bh")
-region = Rect2(32, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ksutn"]
-atlas = ExtResource("6_p3tuq")
-region = Rect2(0, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_0b65k"]
-atlas = ExtResource("6_p3tuq")
-region = Rect2(16, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_jy5b2"]
-atlas = ExtResource("6_p3tuq")
-region = Rect2(32, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_geg3i"]
-atlas = ExtResource("6_p3tuq")
-region = Rect2(48, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_pvvy3"]
-atlas = ExtResource("6_p3tuq")
-region = Rect2(64, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_roo76"]
-atlas = ExtResource("6_p3tuq")
-region = Rect2(80, 0, 16, 16)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_ftix0"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_0hpcy")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_rct4n")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_5fpjg")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_pt613")
-}],
-"loop": true,
-"name": &"idle",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_je0el")
-}],
-"loop": true,
-"name": &"jump",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_xrejc")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_hrowp")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_lxcvo")
-}],
-"loop": true,
-"name": &"puch",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ksutn")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_0b65k")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_jy5b2")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_geg3i")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_pvvy3")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_roo76")
-}],
-"loop": true,
-"name": &"run",
-"speed": 9.0
-}]
-
 [node name="world-01" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -482,6 +356,7 @@ layer_2/name = "tree"
 layer_2/tile_data = PackedInt32Array(2, 65538, 1, -196601, 65538, 1, 11, 65538, 1, 22, 65538, 1, 25, 65538, 1, 28, 65538, 1, 31, 65538, 1, 34, 65538, 1, 44, 65538, 1, -589768, 65538, 1, 65610, 65538, 1)
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+scroll_offset = Vector2(1832.89, 579.833)
 
 [node name="5" type="ParallaxLayer" parent="ParallaxBackground"]
 position = Vector2(-178, -259)
@@ -534,31 +409,14 @@ scale = Vector2(1.5, 1.5)
 texture = ExtResource("12_fv66a")
 centered = false
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
-position = Vector2(-19, 24)
-collision_mask = 18
-script = ExtResource("4_8fqgv")
-
-[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
-zoom = Vector2(2, 2)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
-position = Vector2(0, 0.5)
-shape = SubResource("RectangleShape2D_8lihd")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
-sprite_frames = SubResource("SpriteFrames_ftix0")
-animation = &"run"
-autoplay = "idle"
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="CharacterBody2D"]
-root_node = NodePath("../..")
-
 [node name="Platform" type="Node2D" parent="."]
 
 [node name="moving_platform" parent="Platform" instance=ExtResource("13_t0jk2")]
 position = Vector2(184, -7)
 move_horizontal = false
+
+[node name="Player" parent="." instance=ExtResource("18_uufa1")]
+position = Vector2(0, 1)
 
 [node name="Coins" type="Node2D" parent="."]
 position = Vector2(8, 0)
@@ -584,7 +442,15 @@ position = Vector2(192, -24)
 [node name="coin7" parent="Coins" instance=ExtResource("15_vd35c")]
 position = Vector2(168, -24)
 
-[node name="FriendCharacter" parent="." instance=ExtResource("16_b4mtt")]
-position = Vector2(-88, -8)
+[node name="Friends" type="Node2D" parent="."]
 
-[connection signal="animation_looped" from="CharacterBody2D/AnimatedSprite2D" to="CharacterBody2D" method="_on_animated_sprite_2d_animation_looped"]
+[node name="FriendCharacter" parent="Friends" instance=ExtResource("16_b4mtt")]
+position = Vector2(-360, 16)
+
+[node name="FriendCharacter2" parent="Friends" instance=ExtResource("16_b4mtt")]
+position = Vector2(-472, 16)
+
+[node name="Enemys" type="Node2D" parent="."]
+
+[node name="enemy" parent="Enemys" instance=ExtResource("17_4rohc")]
+position = Vector2(16, 24)
