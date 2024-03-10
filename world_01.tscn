@@ -409,9 +409,9 @@ position = Vector2(-190, -47)
 [node name="FriendCharacter2" parent="Friends" instance=ExtResource("16_b4mtt")]
 position = Vector2(-548, 0)
 
-[node name="Enemys" type="Node2D" parent="."]
+[node name="Enemies" type="Node2D" parent="."]
 
-[node name="enemy" parent="Enemys" instance=ExtResource("17_4rohc")]
+[node name="enemy" parent="Enemies" instance=ExtResource("17_4rohc")]
 position = Vector2(16, 24)
 
 [node name="Camera2D" type="Camera2D" parent="."]
