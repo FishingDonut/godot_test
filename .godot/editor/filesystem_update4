@@ -5,3 +5,6 @@ res://prefabs/moving_platform.tscn
 res://Scripts/moving_platform.gd
 res://prefabs/coin.tscn
 res://Scripts/coin.gd
+res://prefabs/friend.tscn
+res://prefabs/friend.gd
+res://Scripts/friend.gd
