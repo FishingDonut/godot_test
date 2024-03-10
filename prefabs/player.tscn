@@ -132,14 +132,11 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j0836"]
-size = Vector2(7, 11)
+size = Vector2(10, 13)
 
 [node name="Player" type="CharacterBody2D"]
 collision_mask = 30
 script = ExtResource("1_8hfnq")
-
-[node name="PlayerCamera" type="Camera2D" parent="."]
-zoom = Vector2(2, 2)
 
 [node name="PlayersCollision" type="CollisionShape2D" parent="."]
 position = Vector2(0, 0.75)
@@ -150,11 +147,14 @@ sprite_frames = SubResource("SpriteFrames_rwaqd")
 animation = &"idle"
 autoplay = "idle"
 
-[node name="Hitbox" parent="." instance=ExtResource("6_oeqsy")]
-collision_layer = 1
-collision_mask = 38
+[node name="remote" type="RemoteTransform2D" parent="."]
 
-[node name="collision" type="CollisionShape2D" parent="Hitbox"]
-position = Vector2(0.5, -0.5)
+[node name="Hurtbox" parent="." instance=ExtResource("6_oeqsy")]
+collision_mask = 54
+
+[node name="collision" type="CollisionShape2D" parent="Hurtbox"]
+position = Vector2(0, -0.5)
 shape = SubResource("RectangleShape2D_j0836")
 debug_color = Color(0.976471, 0, 0.4, 0.419608)
+
+[connection signal="body_entered" from="Hurtbox" to="." method="_on_hurtbox_body_entered"]

@@ -1,6 +1,9 @@
+Camera2D
+RemoteTransform2D
 CollisionShape2D
-Node2D
+AnimationTree
 AnimationPlayer
+Node2D
 Sprite2D
 RayCast2D
 CharacterBody2D
@@ -9,5 +12,3 @@ AnimatedSprite2D
 AnimatableBody2D
 ParallaxLayer
 ParallaxBackground
-Camera2D
-TileMap

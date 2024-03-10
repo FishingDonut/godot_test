@@ -83,7 +83,7 @@ script = ExtResource("1_fd11g")
 
 [node name="coinAnimation" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_tq4yw")
-animation = &"idle"
+animation = &"collect"
 autoplay = "idle"
 
 [node name="colision" type="CollisionShape2D" parent="."]

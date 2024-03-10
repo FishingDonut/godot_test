@@ -1,6 +1,10 @@
-res://world_01.tscn
 res://prefabs/player.tscn
+res://world_01.tscn
 res://prefabs/friend.tscn
 res://prefabs/hitbox.tscn
 res://prefabs/enemy.tscn
 res://Scripts/Hitbox.gd
+res://Scripts/enemy.gd
+res://Scripts/Player.gd
+res://prefabs/coin.tscn
+res://Scripts/world_01.gd

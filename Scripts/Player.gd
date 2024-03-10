@@ -8,6 +8,7 @@ const JUMP_VELOCITY = -400.0
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 @onready var animation := $PlayerAnimated as AnimatedSprite2D
+@onready var remote := $remote as RemoteTransform2D
 var is_jump := false
 var is_puch := false
 
@@ -54,3 +55,12 @@ func _physics_process(delta):
 		animation.play("idle")
 
 	move_and_slide()
+
+
+func _on_hurtbox_body_entered(body):
+	print("toque")
+	if body.is_in_group("enemy"):
+		queue_free()
+
+func follow_camera(camera):
+	remote.remote_path = camera.get_path()

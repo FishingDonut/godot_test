@@ -10,7 +10,7 @@
 [sub_resource type="Animation" id="Animation_a2aeu"]
 resource_name = "hurt"
 length = 0.1
-loop_mode = 1
+loop_mode = 2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -183,15 +183,15 @@ _data = {
 size = Vector2(10, 8)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vacch"]
-size = Vector2(10, 2)
+size = Vector2(10, 5)
 
-[node name="enemy" type="CharacterBody2D"]
+[node name="enemy" type="CharacterBody2D" groups=["enemy"]]
 collision_layer = 4
 collision_mask = 3
 script = ExtResource("1_o1fno")
 
 [node name="enemySprite" type="Sprite2D" parent="."]
-texture = ExtResource("5_mho4i")
+texture = ExtResource("3_mbj2x")
 
 [node name="AnimationEnemy" type="AnimationPlayer" parent="."]
 libraries = {
@@ -209,6 +209,8 @@ shape = SubResource("RectangleShape2D_edw8b")
 [node name="Hitbox" parent="." instance=ExtResource("6_57bru")]
 
 [node name="colission" type="CollisionShape2D" parent="Hitbox"]
-position = Vector2(0, -4)
+position = Vector2(0, -3.5)
 shape = SubResource("RectangleShape2D_vacch")
 debug_color = Color(1, 0, 0.129412, 0.419608)
+
+[connection signal="animation_finished" from="AnimationEnemy" to="." method="_on_animation_enemy_animation_finished"]
