@@ -29,6 +29,7 @@ project/assembly_name="Zeldinha"
 2d_physics/layer_2="world"
 2d_physics/layer_3="enemy"
 2d_physics/layer_4="itens"
+2d_physics/layer_5="friend"
 
 [rendering]
 
