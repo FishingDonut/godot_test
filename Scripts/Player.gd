@@ -99,3 +99,8 @@ func _set_state():
 	
 func follow_camera(camera):
 	remote.remote_path = camera.get_path()
+
+
+func _on_hit_head_body_entered(body):
+	if body.has_method("break_sprite"):
+		body.break_sprite() 

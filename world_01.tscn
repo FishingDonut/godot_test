@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://bsel0otsoo5fq"]
+[gd_scene load_steps=25 format=3 uid="uid://bsel0otsoo5fq"]
 
 [ext_resource type="Texture2D" uid="uid://ditsy18whmiak" path="res://Assets/Seasonal Tilesets/1 - Grassland/Terrain (16 x 16).png" id="1_80vbw"]
 [ext_resource type="Script" path="res://Scripts/world_01.gd" id="1_k45nb"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://c01ghp4c13iqa" path="res://Assets/Seasonal Tilesets/1 - Grassland/Background parts/1 - Foreground_scenery.png" id="12_fv66a"]
 [ext_resource type="PackedScene" uid="uid://bfrp7r46ugsys" path="res://prefabs/moving_platform.tscn" id="13_t0jk2"]
 [ext_resource type="PackedScene" uid="uid://cvcskd2hu5fgg" path="res://prefabs/coin.tscn" id="15_vd35c"]
+[ext_resource type="PackedScene" uid="uid://mk8arh7i2kvn" path="res://prefabs/block_broken.tscn" id="16_1dht2"]
 [ext_resource type="PackedScene" uid="uid://cc0xcf2wgpsus" path="res://prefabs/friend.tscn" id="16_b4mtt"]
 [ext_resource type="PackedScene" uid="uid://cycuhveh2vmva" path="res://prefabs/enemy.tscn" id="17_4rohc"]
 [ext_resource type="PackedScene" uid="uid://d0a40t4jyanrm" path="res://prefabs/player.tscn" id="18_uufa1"]
@@ -459,12 +460,12 @@ centered = false
 [node name="Platform" type="Node2D" parent="."]
 
 [node name="moving_platform" parent="Platform" instance=ExtResource("13_t0jk2")]
-position = Vector2(177, -9)
+position = Vector2(132, -57)
 move_speed = 16.0
 distance = 580
 
 [node name="Player" parent="." instance=ExtResource("18_uufa1")]
-position = Vector2(0, 1)
+position = Vector2(-3, 25)
 
 [node name="Coins" type="Node2D" parent="."]
 position = Vector2(8, 0)
@@ -514,27 +515,43 @@ position = Vector2(-1101, 95)
 
 [node name="enemy" parent="Enemies" instance=ExtResource("17_4rohc")]
 position = Vector2(41, -92)
-SPEED = 20.0
 
 [node name="enemy2" parent="Enemies" instance=ExtResource("17_4rohc")]
 position = Vector2(104, -25)
-SPEED = 20.0
-
-[node name="enemy3" parent="Enemies" instance=ExtResource("17_4rohc")]
-position = Vector2(-144, 17)
-SPEED = 20.0
-
-[node name="enemy4" parent="Enemies" instance=ExtResource("17_4rohc")]
-position = Vector2(146, -29)
-SPEED = 20.0
-
-[node name="enemy5" parent="Enemies" instance=ExtResource("17_4rohc")]
-position = Vector2(85, 21)
-SPEED = 20.0
-
-[node name="enemy6" parent="Enemies" instance=ExtResource("17_4rohc")]
-position = Vector2(61, 20)
-SPEED = 20.0
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(2, 2)
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="block_brick" parent="Node2D" instance=ExtResource("16_1dht2")]
+position = Vector2(-25, -8)
+pieces = PackedStringArray("res://Assets/pieces.png", "res://Assets/pieces.png", "res://Assets/pieces.png", "res://Assets/pieces.png")
+
+[node name="block_brick2" parent="Node2D" instance=ExtResource("16_1dht2")]
+position = Vector2(-40, -8)
+pieces = PackedStringArray("res://Assets/pieces.png", "res://Assets/pieces.png", "res://Assets/pieces.png", "res://Assets/pieces.png")
+
+[node name="block_brick3" parent="Node2D" instance=ExtResource("16_1dht2")]
+position = Vector2(-9, -8)
+pieces = PackedStringArray("res://Assets/pieces.png", "res://Assets/pieces.png", "res://Assets/pieces.png", "res://Assets/pieces.png")
+
+[node name="block_brick4" parent="Node2D" instance=ExtResource("16_1dht2")]
+position = Vector2(103, -57)
+pieces = PackedStringArray("res://Assets/pieces.png", "res://Assets/pieces.png", "res://Assets/pieces.png", "res://Assets/pieces.png")
+
+[node name="block_brick5" parent="Node2D" instance=ExtResource("16_1dht2")]
+position = Vector2(42, -7)
+pieces = PackedStringArray("res://Assets/pieces.png", "res://Assets/pieces.png", "res://Assets/pieces.png", "res://Assets/pieces.png")
+
+[node name="block_brick6" parent="Node2D" instance=ExtResource("16_1dht2")]
+position = Vector2(248, -23)
+pieces = PackedStringArray("res://Assets/pieces.png", "res://Assets/pieces.png", "res://Assets/pieces.png", "res://Assets/pieces.png")
+
+[node name="block_brick7" parent="Node2D" instance=ExtResource("16_1dht2")]
+position = Vector2(360, -23)
+pieces = PackedStringArray("res://Assets/pieces.png", "res://Assets/pieces.png", "res://Assets/pieces.png", "res://Assets/pieces.png")
+
+[node name="block_brick8" parent="Node2D" instance=ExtResource("16_1dht2")]
+position = Vector2(280, -23)
+pieces = PackedStringArray("res://Assets/pieces.png", "res://Assets/pieces.png", "res://Assets/pieces.png", "res://Assets/pieces.png")

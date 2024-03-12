@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://d0a40t4jyanrm"]
+[gd_scene load_steps=26 format=3 uid="uid://d0a40t4jyanrm"]
 
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_8hfnq"]
 [ext_resource type="Texture2D" uid="uid://dbv4evfnep2h2" path="res://Assets/Sprite Pack 1/1 - Mr. Man/Hurt (16 x 16).png" id="2_1ejlg"]
@@ -143,8 +143,11 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j0836"]
 size = Vector2(10, 13)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g7coh"]
+size = Vector2(6, 3)
+
 [node name="Player" type="CharacterBody2D"]
-collision_mask = 158
+collision_mask = 414
 script = ExtResource("1_8hfnq")
 
 [node name="PlayersCollision" type="CollisionShape2D" parent="."]
@@ -153,7 +156,7 @@ shape = SubResource("RectangleShape2D_3llny")
 
 [node name="PlayerAnimated" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_rwaqd")
-animation = &"hurt"
+animation = &"idle"
 autoplay = "idle"
 
 [node name="remote" type="RemoteTransform2D" parent="."]
@@ -176,4 +179,14 @@ position = Vector2(-4, 0)
 target_position = Vector2(-8, 0)
 collision_mask = 4
 
+[node name="hit_head" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 256
+
+[node name="collision" type="CollisionShape2D" parent="hit_head"]
+position = Vector2(0, -6.5)
+shape = SubResource("RectangleShape2D_g7coh")
+debug_color = Color(1, 0.835294, 0, 0.419608)
+
 [connection signal="body_entered" from="Hurtbox" to="." method="_on_hurtbox_body_entered"]
+[connection signal="body_entered" from="hit_head" to="." method="_on_hit_head_body_entered"]

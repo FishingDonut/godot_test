@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://b68u71oak2qty"]
+
+[ext_resource type="Script" path="res://Scripts/brick_pieces.gd" id="1_4es7f"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_78cfo"]
+size = Vector2(5, 7)
+
+[node name="particles_box" type="RigidBody2D"]
+collision_layer = 0
+collision_mask = 3
+script = ExtResource("1_4es7f")
+
+[node name="texture" type="Sprite2D" parent="."]
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_78cfo")
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
