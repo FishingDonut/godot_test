@@ -1,9 +1,12 @@
-res://prefabs/player.tscn
 res://Scripts/Hitbox.gd
+res://prefabs/block_broken.tscn
+res://Scripts/brick_pieces.gd
+res://prefabs/brick_pieces.tscn
+res://Scripts/block_broken.gd
+res://prefabs/player.tscn
 res://Scripts/Player.gd
 res://world_01.tscn
 res://prefabs/hitbox.tscn
 res://prefabs/enemy.tscn
 res://prefabs/moving_platform.tscn
-res://Scripts/enemy.gd
-res://Scripts/world_01.gd
+res://prefabs/particles_box.tscn

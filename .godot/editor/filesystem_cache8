@@ -1,12 +1,12 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1710241776
+::res://::1710257038
 icon.svg::CompressedTexture2D::6962981650475456563::1709946046::1709946053::1::::<><>::
 README.md::TextFile::-1::1710022571::0::1::::<><>::
-world_01.tscn::PackedScene::3658790677477293954::1710206487::0::1::::<><>::uid://ditsy18whmiak::::res://Assets/Seasonal Tilesets/1 - Grassland/Terrain (16 x 16).png<>res://Scripts/world_01.gd<>uid://b4olsxdsyqtf1::::res://Assets/Seasonal Tilesets/1 - Grassland/Extra_plants (16 x 16).png<>uid://bk00sd2q4gnqn::::res://Assets/Seasonal Tilesets/1 - Grassland/Grassland_entities (16 x 16).png<>uid://lty7idu5x8l2::::res://Assets/Seasonal Tilesets/4 - Winter World/Terrain (16 x 16).png<>uid://b833sww4lc82c::::res://Assets/Seasonal Tilesets/1 - Grassland/Background parts/5 - Sky_color.png<>uid://bb2v87eapid6y::::res://Assets/Seasonal Tilesets/1 - Grassland/Background parts/4 - Cloud_cover_2.png<>uid://prieh1i2uqjb::::res://Assets/Seasonal Tilesets/1 - Grassland/Background parts/3 - Cloud_cover_1.png<>uid://b0t7vuxvug51p::::res://Assets/Seasonal Tilesets/1 - Grassland/Background parts/2 - Hills.png<>uid://c01ghp4c13iqa::::res://Assets/Seasonal Tilesets/1 - Grassland/Background parts/1 - Foreground_scenery.png<>uid://bfrp7r46ugsys::::res://prefabs/moving_platform.tscn<>uid://cvcskd2hu5fgg::::res://prefabs/coin.tscn<>uid://cc0xcf2wgpsus::::res://prefabs/friend.tscn<>uid://cycuhveh2vmva::::res://prefabs/enemy.tscn<>uid://d0a40t4jyanrm::::res://prefabs/player.tscn
-::res://Assets/::1710246252
-Blocks (16 x 16).png::CompressedTexture2D::354113208599219734::1710246234::1710246263::1::::<><>::
+world_01.tscn::PackedScene::3658790677477293954::1710257054::0::1::::<><>::uid://ditsy18whmiak::::res://Assets/Seasonal Tilesets/1 - Grassland/Terrain (16 x 16).png<>res://Scripts/world_01.gd<>uid://b4olsxdsyqtf1::::res://Assets/Seasonal Tilesets/1 - Grassland/Extra_plants (16 x 16).png<>uid://bk00sd2q4gnqn::::res://Assets/Seasonal Tilesets/1 - Grassland/Grassland_entities (16 x 16).png<>uid://lty7idu5x8l2::::res://Assets/Seasonal Tilesets/4 - Winter World/Terrain (16 x 16).png<>uid://b833sww4lc82c::::res://Assets/Seasonal Tilesets/1 - Grassland/Background parts/5 - Sky_color.png<>uid://bb2v87eapid6y::::res://Assets/Seasonal Tilesets/1 - Grassland/Background parts/4 - Cloud_cover_2.png<>uid://prieh1i2uqjb::::res://Assets/Seasonal Tilesets/1 - Grassland/Background parts/3 - Cloud_cover_1.png<>uid://b0t7vuxvug51p::::res://Assets/Seasonal Tilesets/1 - Grassland/Background parts/2 - Hills.png<>uid://c01ghp4c13iqa::::res://Assets/Seasonal Tilesets/1 - Grassland/Background parts/1 - Foreground_scenery.png<>uid://bfrp7r46ugsys::::res://prefabs/moving_platform.tscn<>uid://cvcskd2hu5fgg::::res://prefabs/coin.tscn<>uid://mk8arh7i2kvn::::res://prefabs/block_broken.tscn<>uid://cc0xcf2wgpsus::::res://prefabs/friend.tscn<>uid://cycuhveh2vmva::::res://prefabs/enemy.tscn<>uid://d0a40t4jyanrm::::res://prefabs/player.tscn
+::res://Assets/::1710250866
 Game Boy Advance - The Legend of Zelda The Minish Cap - Link Cap.png::CompressedTexture2D::7034560678964778950::1709937187::1709946188::1::::<><>::
 Game Boy Advance - The Legend of Zelda The Minish Cap - South Hyrule Field.png::CompressedTexture2D::5481990935066654451::1709946321::1709946339::1::::<><>::
+pieces.png::CompressedTexture2D::354113208599219734::1710246234::1710250866::1::::<><>::
 ::res://Assets/Mini FX, Items & UI/::1710007964
 LICENSE.txt::TextFile::-1::1593868726::0::1::::<><>::
 ::res://Assets/Mini FX, Items & UI/Common Pick-ups/::1710007969
@@ -215,20 +215,24 @@ Suriken.png::CompressedTexture2D::1904750343108445413::1631672719::1710167757::1
 Trap_Spike.png::CompressedTexture2D::7687011912663754417::1631593277::1710167757::1::::<><>::
 Trap_Spike_Run.png::CompressedTexture2D::6229658813256262453::1632131052::1710167757::1::::<><>::
 Wood.png::CompressedTexture2D::5555917534027782545::1631853541::1710167757::1::::<><>::
-::res://prefabs/::1710206487
+::res://prefabs/::1710257038
+block_broken.tscn::PackedScene::864914467134560791::1710257095::0::1::::<><>::uid://coqhi8oul6gn4::::res://Assets/Seasonal Tilesets/5 - Misc. universal tiles/Blocks (16 x 16).png<>res://Scripts/block_broken.gd
+brick_pieces.tscn::PackedScene::4631672174865172822::1710257077::0::1::::<><>::res://Scripts/brick_pieces.gd
 coin.tscn::PackedScene::6252046802727576502::1710077344::0::1::::<><>::uid://cvnuf12pfvpcl::::res://Assets/Mini FX, Items & UI/Common Pick-ups/Coin (16 x 16).png<>res://Scripts/coin.gd<>uid://dmkb6k4htpbyq::::res://Assets/Mini FX, Items & UI/Effects/Yellow_Sparkle (16 x 16).png
-enemy.tscn::PackedScene::6462730320144302130::1710206487::0::1::::<><>::uid://cbywb4caw154k::::res://Assets/Sprite Pack 1/4 - Bushly/Idle (16 x 16).png<>res://Scripts/enemy.gd<>uid://b18vi8bihqvyx::::res://Assets/Sprite Pack 1/4 - Bushly/Running (16 x 16).png<>uid://n4job4733srg::::res://Assets/Sprite Pack 1/4 - Bushly/Hurt (16 x 16).png<>uid://d184urq1tm22m::::res://Assets/Sprite Pack 1/4 - Bushly/Jumping (16 x 16).png<>uid://cg4mhf7wqaexy::::res://prefabs/hitbox.tscn
+enemy.tscn::PackedScene::6462730320144302130::1710257038::0::1::::<><>::uid://cbywb4caw154k::::res://Assets/Sprite Pack 1/4 - Bushly/Idle (16 x 16).png<>res://Scripts/enemy.gd<>uid://b18vi8bihqvyx::::res://Assets/Sprite Pack 1/4 - Bushly/Running (16 x 16).png<>uid://n4job4733srg::::res://Assets/Sprite Pack 1/4 - Bushly/Hurt (16 x 16).png<>uid://d184urq1tm22m::::res://Assets/Sprite Pack 1/4 - Bushly/Jumping (16 x 16).png<>uid://cg4mhf7wqaexy::::res://prefabs/hitbox.tscn
 friend.gd::GDScript::-1::1710028971::0::1::::<>CharacterBody2D<>::
 friend.tscn::PackedScene::4966228866269878106::1710170903::0::1::::<><>::uid://bg588nle3aqk::::res://Assets/Sprite Pack 1/6 - Rolling Nero/Rolling (16 x 16).png<>res://prefabs/friend.gd
-hitbox.tscn::PackedScene::5254582801624119926::1710206487::0::1::::<><>::res://Scripts/Hitbox.gd
-moving_platform.tscn::PackedScene::2773428163130495642::1710206487::0::1::::<><>::uid://coqhi8oul6gn4::::res://Assets/Seasonal Tilesets/5 - Misc. universal tiles/Blocks (16 x 16).png<>res://Scripts/moving_platform.gd
-player.tscn::PackedScene::8915789622851949922::1710204015::0::1::::<><>::res://Scripts/Player.gd<>uid://dbv4evfnep2h2::::res://Assets/Sprite Pack 1/1 - Mr. Man/Hurt (16 x 16).png<>uid://b0vul1qcbm7xg::::res://Assets/Sprite Pack 1/1 - Mr. Man/Idle (16 x 16).png<>uid://bpfh240oo8mi4::::res://Assets/Sprite Pack 1/1 - Mr. Man/Jumping (16 x 16).png<>uid://b4lrnmotgqqud::::res://Assets/Sprite Pack 1/1 - Mr. Man/Punching (16 x 16).png<>uid://cmlyhv3uv41bk::::res://Assets/Sprite Pack 1/1 - Mr. Man/Run (16 x 16).png<>uid://cg4mhf7wqaexy::::res://prefabs/hitbox.tscn
-::res://Scripts/::1710206471
+hitbox.tscn::PackedScene::5254582801624119926::1710257038::0::1::::<><>::res://Scripts/Hitbox.gd
+moving_platform.tscn::PackedScene::2773428163130495642::1710257038::0::1::::<><>::uid://coqhi8oul6gn4::::res://Assets/Seasonal Tilesets/5 - Misc. universal tiles/Blocks (16 x 16).png<>res://Scripts/moving_platform.gd
+player.tscn::PackedScene::8915789622851949922::1710257038::0::1::::<><>::res://Scripts/Player.gd<>uid://dbv4evfnep2h2::::res://Assets/Sprite Pack 1/1 - Mr. Man/Hurt (16 x 16).png<>uid://b0vul1qcbm7xg::::res://Assets/Sprite Pack 1/1 - Mr. Man/Idle (16 x 16).png<>uid://bpfh240oo8mi4::::res://Assets/Sprite Pack 1/1 - Mr. Man/Jumping (16 x 16).png<>uid://b4lrnmotgqqud::::res://Assets/Sprite Pack 1/1 - Mr. Man/Punching (16 x 16).png<>uid://cmlyhv3uv41bk::::res://Assets/Sprite Pack 1/1 - Mr. Man/Run (16 x 16).png<>uid://cg4mhf7wqaexy::::res://prefabs/hitbox.tscn
+::res://Scripts/::1710257035
+block_broken.gd::GDScript::-1::1710257095::0::1::::<>CharacterBody2D<>::
+brick_pieces.gd::GDScript::-1::1710248638::0::1::::<>RigidBody2D<>::
 coin.gd::GDScript::-1::1710020266::0::1::::<>Area2D<>::
 enemy.gd::GDScript::-1::1710206471::0::1::::<>CharacterBody2D<>::
-Hitbox.gd::GDScript::-1::1710205769::0::1::::<>Area2D<>::
+Hitbox.gd::GDScript::-1::1710247136::0::1::::<>Area2D<>::
 moving_platform.gd::GDScript::-1::1710018821::0::1::::<>Node2D<>::
-Player.gd::GDScript::-1::1710198875::0::1::::<>CharacterBody2D<>::
+Player.gd::GDScript::-1::1710250634::0::1::::<>CharacterBody2D<>::
 trap_1.gd::GDScript::-1::1710171828::0::1::::<>Node2D<>::
 world_01.gd::GDScript::-1::1710204028::0::1::::<>Node2D<>::
 ::res://Shaders/::1709996910
