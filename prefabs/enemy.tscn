@@ -191,7 +191,8 @@ collision_mask = 3
 script = ExtResource("1_o1fno")
 
 [node name="enemySprite" type="Sprite2D" parent="."]
-texture = ExtResource("3_mbj2x")
+texture = ExtResource("1_g3bt6")
+hframes = 3
 
 [node name="AnimationEnemy" type="AnimationPlayer" parent="."]
 libraries = {

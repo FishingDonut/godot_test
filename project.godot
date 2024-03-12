@@ -16,7 +16,7 @@ config/icon="res://icon.svg"
 
 [display]
 
-window/size/viewport_width=440
+window/size/viewport_width=480
 window/size/viewport_height=320
 
 [dotnet]
@@ -32,6 +32,7 @@ project/assembly_name="Zeldinha"
 2d_physics/layer_5="friend"
 2d_physics/layer_6="hitbox"
 2d_physics/layer_7="hurbox"
+2d_physics/layer_8="trap"
 
 [rendering]
 
