@@ -1,8 +1,9 @@
-[gd_scene load_steps=25 format=3 uid="uid://bsel0otsoo5fq"]
+[gd_scene load_steps=26 format=3 uid="uid://bsel0otsoo5fq"]
 
 [ext_resource type="Texture2D" uid="uid://ditsy18whmiak" path="res://Assets/Seasonal Tilesets/1 - Grassland/Terrain (16 x 16).png" id="1_80vbw"]
 [ext_resource type="Script" path="res://Scripts/world_01.gd" id="1_k45nb"]
 [ext_resource type="Texture2D" uid="uid://b4olsxdsyqtf1" path="res://Assets/Seasonal Tilesets/1 - Grassland/Extra_plants (16 x 16).png" id="2_6e0rr"]
+[ext_resource type="PackedScene" uid="uid://ctkftc3aoambv" path="res://prefabs/tree_animated.tscn" id="2_yc35p"]
 [ext_resource type="Texture2D" uid="uid://bk00sd2q4gnqn" path="res://Assets/Seasonal Tilesets/1 - Grassland/Grassland_entities (16 x 16).png" id="3_5ksmo"]
 [ext_resource type="Texture2D" uid="uid://lty7idu5x8l2" path="res://Assets/Seasonal Tilesets/4 - Winter World/Terrain (16 x 16).png" id="5_mfh3m"]
 [ext_resource type="Texture2D" uid="uid://b833sww4lc82c" path="res://Assets/Seasonal Tilesets/1 - Grassland/Background parts/5 - Sky_color.png" id="8_6ijt0"]
@@ -393,7 +394,15 @@ shader_parameter/move_speed = 0.02
 [node name="world-01" type="Node2D"]
 script = ExtResource("1_k45nb")
 
-[node name="TileMap" type="TileMap" parent="."]
+[node name="world" type="Node2D" parent="."]
+
+[node name="Tree_animated" parent="world" instance=ExtResource("2_yc35p")]
+position = Vector2(-182, -31)
+
+[node name="Tree_animated2" parent="world" instance=ExtResource("2_yc35p")]
+position = Vector2(-126, 32)
+
+[node name="TileMap" type="TileMap" parent="world"]
 tile_set = SubResource("TileSet_g3ih2")
 format = 2
 layer_0/name = "player"
@@ -402,57 +411,57 @@ layer_1/tile_data = PackedInt32Array(196653, 262144, 3, 262189, 262144, 3, 32772
 layer_2/name = "tree"
 layer_2/tile_data = PackedInt32Array(2, 65538, 1, -196601, 65538, 1, 11, 65538, 1, 22, 65538, 1, 25, 65538, 1, 28, 65538, 1, 31, 65538, 1, 34, 65538, 1, 44, 65538, 1, -589768, 65538, 1, 65610, 65538, 1, 65531, 65537, 1, 65491, 65537, 1, 131037, 327682, 5, 131040, 327682, 5, 131043, 327682, 5, 131046, 327682, 5, 131049, 327682, 5, 131052, 327682, 5, 131055, 327682, 5, 65519, 65538, 1, 65505, 65538, 1, 65512, 65538, 1, -131086, 65538, 5, 131063, 65538, 5, -65574, 196610, 5)
 
-[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+[node name="ParallaxBackground" type="ParallaxBackground" parent="world"]
 scroll_offset = Vector2(1832.89, 579.833)
 
-[node name="5" type="ParallaxLayer" parent="ParallaxBackground"]
+[node name="5" type="ParallaxLayer" parent="world/ParallaxBackground"]
 position = Vector2(-178, -259)
 motion_scale = Vector2(0, 0)
 motion_mirroring = Vector2(432, 312)
 
-[node name="texture" type="Sprite2D" parent="ParallaxBackground/5"]
+[node name="texture" type="Sprite2D" parent="world/ParallaxBackground/5"]
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("8_6ijt0")
 centered = false
 
-[node name="4" type="ParallaxLayer" parent="ParallaxBackground"]
+[node name="4" type="ParallaxLayer" parent="world/ParallaxBackground"]
 position = Vector2(-178, -259)
 motion_scale = Vector2(0.2, 0.7)
 motion_mirroring = Vector2(432, 0)
 
-[node name="texture" type="Sprite2D" parent="ParallaxBackground/4"]
+[node name="texture" type="Sprite2D" parent="world/ParallaxBackground/4"]
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("9_bbjtp")
 centered = false
 
-[node name="3" type="ParallaxLayer" parent="ParallaxBackground"]
+[node name="3" type="ParallaxLayer" parent="world/ParallaxBackground"]
 position = Vector2(-178, -259)
 motion_scale = Vector2(0.4, 0.8)
 motion_mirroring = Vector2(432, 0)
 
-[node name="texture" type="Sprite2D" parent="ParallaxBackground/3"]
+[node name="texture" type="Sprite2D" parent="world/ParallaxBackground/3"]
 texture_repeat = 2
 material = SubResource("ShaderMaterial_ijijs")
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("10_r4rri")
 centered = false
 
-[node name="2" type="ParallaxLayer" parent="ParallaxBackground"]
+[node name="2" type="ParallaxLayer" parent="world/ParallaxBackground"]
 position = Vector2(-178, -259)
 motion_scale = Vector2(0.6, 0.9)
 motion_mirroring = Vector2(432, 0)
 
-[node name="texture" type="Sprite2D" parent="ParallaxBackground/2"]
+[node name="texture" type="Sprite2D" parent="world/ParallaxBackground/2"]
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("11_dooc5")
 centered = false
 
-[node name="1" type="ParallaxLayer" parent="ParallaxBackground"]
+[node name="1" type="ParallaxLayer" parent="world/ParallaxBackground"]
 position = Vector2(-178, -259)
 motion_scale = Vector2(0.9, 0.9)
 motion_mirroring = Vector2(432, 0)
 
-[node name="texture" type="Sprite2D" parent="ParallaxBackground/1"]
+[node name="texture" type="Sprite2D" parent="world/ParallaxBackground/1"]
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("12_fv66a")
 centered = false
@@ -549,36 +558,36 @@ position = Vector2(104, -25)
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(2, 2)
 
-[node name="Node2D" type="Node2D" parent="."]
+[node name="block" type="Node2D" parent="."]
 
-[node name="block_brick" parent="Node2D" instance=ExtResource("16_1dht2")]
+[node name="block_brick" parent="block" instance=ExtResource("16_1dht2")]
 position = Vector2(-25, -8)
 pieces = PackedStringArray("res://Assets/pieces.png", "res://Assets/pieces.png", "res://Assets/pieces.png", "res://Assets/pieces.png")
 
-[node name="block_brick2" parent="Node2D" instance=ExtResource("16_1dht2")]
+[node name="block_brick2" parent="block" instance=ExtResource("16_1dht2")]
 position = Vector2(-40, -8)
 pieces = PackedStringArray("res://Assets/pieces.png", "res://Assets/pieces.png", "res://Assets/pieces.png", "res://Assets/pieces.png")
 
-[node name="block_brick3" parent="Node2D" instance=ExtResource("16_1dht2")]
-position = Vector2(-9, -8)
+[node name="block_brick3" parent="block" instance=ExtResource("16_1dht2")]
+position = Vector2(-11, -8)
 pieces = PackedStringArray("res://Assets/pieces.png", "res://Assets/pieces.png", "res://Assets/pieces.png", "res://Assets/pieces.png")
 
-[node name="block_brick4" parent="Node2D" instance=ExtResource("16_1dht2")]
+[node name="block_brick4" parent="block" instance=ExtResource("16_1dht2")]
 position = Vector2(103, -57)
 pieces = PackedStringArray("res://Assets/pieces.png", "res://Assets/pieces.png", "res://Assets/pieces.png", "res://Assets/pieces.png")
 
-[node name="block_brick5" parent="Node2D" instance=ExtResource("16_1dht2")]
+[node name="block_brick5" parent="block" instance=ExtResource("16_1dht2")]
 position = Vector2(42, -7)
 pieces = PackedStringArray("res://Assets/pieces.png", "res://Assets/pieces.png", "res://Assets/pieces.png", "res://Assets/pieces.png")
 
-[node name="block_brick6" parent="Node2D" instance=ExtResource("16_1dht2")]
+[node name="block_brick6" parent="block" instance=ExtResource("16_1dht2")]
 position = Vector2(248, -23)
 pieces = PackedStringArray("res://Assets/pieces.png", "res://Assets/pieces.png", "res://Assets/pieces.png", "res://Assets/pieces.png")
 
-[node name="block_brick7" parent="Node2D" instance=ExtResource("16_1dht2")]
+[node name="block_brick7" parent="block" instance=ExtResource("16_1dht2")]
 position = Vector2(360, -23)
 pieces = PackedStringArray("res://Assets/pieces.png", "res://Assets/pieces.png", "res://Assets/pieces.png", "res://Assets/pieces.png")
 
-[node name="block_brick8" parent="Node2D" instance=ExtResource("16_1dht2")]
+[node name="block_brick8" parent="block" instance=ExtResource("16_1dht2")]
 position = Vector2(280, -23)
 pieces = PackedStringArray("res://Assets/pieces.png", "res://Assets/pieces.png", "res://Assets/pieces.png", "res://Assets/pieces.png")

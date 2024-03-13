@@ -12,3 +12,4 @@ res://prefabs/player.tscn
 res://Scripts/Player.gd
 res://prefabs/enemy.tscn
 res://Scripts/enemy.gd
+res://prefabs/tree_animated.tscn
