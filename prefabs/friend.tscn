@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://cc0xcf2wgpsus"]
+[gd_scene load_steps=9 format=3 uid="uid://cc0xcf2wgpsus"]
 
 [ext_resource type="Texture2D" uid="uid://bg588nle3aqk" path="res://Assets/Sprite Pack 1/6 - Rolling Nero/Rolling (16 x 16).png" id="1_pw2qu"]
-[ext_resource type="Script" path="res://prefabs/friend.gd" id="1_shnb4"]
+[ext_resource type="Script" path="res://Scripts/friend.gd" id="1_uwomf"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_blu2x"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mvpou"]
 radius = 7.0
+height = 14.0
 
 [sub_resource type="Animation" id="Animation_odo2s"]
 length = 0.001
@@ -19,6 +20,42 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("friendSprite:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("friendSprite:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("friendAnimation:speed_scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
 }
 
 [sub_resource type="Animation" id="Animation_36tav"]
@@ -38,23 +75,82 @@ tracks/0/keys = {
 "values": [0, 1, 2, 3, 4, 5]
 }
 
+[sub_resource type="Animation" id="Animation_eccrg"]
+resource_name = "hurt"
+length = 0.1
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("friendSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("friendSprite:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1, 0.01)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("friendSprite:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 6)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("friendAnimation:speed_scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_tjgic"]
 _data = {
 "RESET": SubResource("Animation_odo2s"),
+"hurt": SubResource("Animation_eccrg"),
 "walk": SubResource("Animation_36tav")
 }
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mu81o"]
+size = Vector2(12, 4.25)
 
 [node name="FriendCharacter" type="CharacterBody2D"]
 collision_layer = 16
 collision_mask = 23
-script = ExtResource("1_shnb4")
+script = ExtResource("1_uwomf")
 
 [node name="friendSprite" type="Sprite2D" parent="."]
 texture = ExtResource("1_pw2qu")
 hframes = 6
 
 [node name="friendCollision" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_blu2x")
+position = Vector2(0, 1)
+scale = Vector2(1, 0.9)
+shape = SubResource("CapsuleShape2D_mvpou")
 
 [node name="friendRayCast" type="RayCast2D" parent="."]
 target_position = Vector2(-8, 0)
@@ -65,3 +161,13 @@ libraries = {
 "": SubResource("AnimationLibrary_tjgic")
 }
 autoplay = "walk"
+
+[node name="HurtBox" type="Area2D" parent="."]
+collision_layer = 0
+
+[node name="head" type="CollisionShape2D" parent="HurtBox"]
+position = Vector2(0, -5.125)
+shape = SubResource("RectangleShape2D_mu81o")
+debug_color = Color(0.992157, 0, 0.278431, 0.419608)
+
+[connection signal="body_entered" from="HurtBox" to="." method="_on_hurt_box_body_entered"]

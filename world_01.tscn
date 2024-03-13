@@ -504,9 +504,27 @@ position = Vector2(473, 24)
 
 [node name="FriendCharacter" parent="Friends" instance=ExtResource("16_b4mtt")]
 position = Vector2(-190, -47)
+pieces = PackedStringArray("res://Assets/Sprite Pack 1/6 - Rolling Nero/slime_pieces.png", "res://Assets/Sprite Pack 1/6 - Rolling Nero/slime_pieces.png", "res://Assets/Sprite Pack 1/6 - Rolling Nero/slime_pieces.png")
 
 [node name="FriendCharacter2" parent="Friends" instance=ExtResource("16_b4mtt")]
 position = Vector2(-548, 0)
+pieces = PackedStringArray("res://Assets/Sprite Pack 1/6 - Rolling Nero/slime_pieces.png", "res://Assets/Sprite Pack 1/6 - Rolling Nero/slime_pieces.png", "res://Assets/Sprite Pack 1/6 - Rolling Nero/slime_pieces.png", "res://Assets/Sprite Pack 1/6 - Rolling Nero/slime_pieces.png")
+
+[node name="FriendCharacter4" parent="Friends" instance=ExtResource("16_b4mtt")]
+position = Vector2(-486, -3)
+pieces = PackedStringArray("res://Assets/Sprite Pack 1/6 - Rolling Nero/slime_pieces.png", "res://Assets/Sprite Pack 1/6 - Rolling Nero/slime_pieces.png", "res://Assets/Sprite Pack 1/6 - Rolling Nero/slime_pieces.png", "res://Assets/Sprite Pack 1/6 - Rolling Nero/slime_pieces.png")
+
+[node name="FriendCharacter5" parent="Friends" instance=ExtResource("16_b4mtt")]
+position = Vector2(-417, -2)
+pieces = PackedStringArray("res://Assets/Sprite Pack 1/6 - Rolling Nero/slime_pieces.png", "res://Assets/Sprite Pack 1/6 - Rolling Nero/slime_pieces.png", "res://Assets/Sprite Pack 1/6 - Rolling Nero/slime_pieces.png", "res://Assets/Sprite Pack 1/6 - Rolling Nero/slime_pieces.png")
+
+[node name="FriendCharacter6" parent="Friends" instance=ExtResource("16_b4mtt")]
+position = Vector2(-457, -16)
+pieces = PackedStringArray("res://Assets/Sprite Pack 1/6 - Rolling Nero/slime_pieces.png", "res://Assets/Sprite Pack 1/6 - Rolling Nero/slime_pieces.png", "res://Assets/Sprite Pack 1/6 - Rolling Nero/slime_pieces.png", "res://Assets/Sprite Pack 1/6 - Rolling Nero/slime_pieces.png")
+
+[node name="FriendCharacter7" parent="Friends" instance=ExtResource("16_b4mtt")]
+position = Vector2(-521, -26)
+pieces = PackedStringArray("res://Assets/Sprite Pack 1/6 - Rolling Nero/slime_pieces.png", "res://Assets/Sprite Pack 1/6 - Rolling Nero/slime_pieces.png", "res://Assets/Sprite Pack 1/6 - Rolling Nero/slime_pieces.png", "res://Assets/Sprite Pack 1/6 - Rolling Nero/slime_pieces.png")
 
 [node name="FriendCharacter3" parent="Friends" instance=ExtResource("16_b4mtt")]
 position = Vector2(-1101, 95)

@@ -8,9 +8,6 @@
 [ext_resource type="Texture2D" uid="uid://cmlyhv3uv41bk" path="res://Assets/Sprite Pack 1/1 - Mr. Man/Run (16 x 16).png" id="5_07g44"]
 [ext_resource type="PackedScene" uid="uid://cg4mhf7wqaexy" path="res://prefabs/hitbox.tscn" id="6_oeqsy"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_3llny"]
-size = Vector2(6, 12.5)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_0hpcy"]
 atlas = ExtResource("2_4jndw")
 region = Rect2(0, 0, 16, 16)
@@ -140,6 +137,9 @@ animations = [{
 "speed": 9.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3llny"]
+size = Vector2(6, 12.5)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j0836"]
 size = Vector2(10, 13)
 
@@ -150,18 +150,20 @@ size = Vector2(6, 3)
 collision_mask = 414
 script = ExtResource("1_8hfnq")
 
-[node name="PlayersCollision" type="CollisionShape2D" parent="."]
-position = Vector2(0, 0.75)
-shape = SubResource("RectangleShape2D_3llny")
-
 [node name="PlayerAnimated" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_rwaqd")
 animation = &"idle"
 autoplay = "idle"
 
+[node name="PlayersCollision" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(0, 0.75)
+shape = SubResource("RectangleShape2D_3llny")
+
 [node name="remote" type="RemoteTransform2D" parent="."]
 
 [node name="Hurtbox" parent="." instance=ExtResource("6_oeqsy")]
+visible = false
 collision_mask = 54
 
 [node name="collision" type="CollisionShape2D" parent="Hurtbox"]
@@ -170,11 +172,13 @@ shape = SubResource("RectangleShape2D_j0836")
 debug_color = Color(0.976471, 0, 0.4, 0.419608)
 
 [node name="Knockback_right" type="RayCast2D" parent="."]
+visible = false
 position = Vector2(4, 0)
 target_position = Vector2(8, 0)
 collision_mask = 4
 
 [node name="Knockback_left" type="RayCast2D" parent="."]
+visible = false
 position = Vector2(-4, 0)
 target_position = Vector2(-8, 0)
 collision_mask = 4
