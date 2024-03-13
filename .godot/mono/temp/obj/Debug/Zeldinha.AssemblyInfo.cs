@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Zeldinha")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3f2d6ee3f6bfe1d45131d72d1f680eec758296ad")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+606569f7efe39acfa508ab158d54ca597c04651f")]
 [assembly: System.Reflection.AssemblyProductAttribute("Zeldinha")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Zeldinha")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
