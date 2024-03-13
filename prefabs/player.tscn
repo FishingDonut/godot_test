@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://d0a40t4jyanrm"]
+[gd_scene load_steps=27 format=3 uid="uid://d0a40t4jyanrm"]
 
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_8hfnq"]
 [ext_resource type="Texture2D" uid="uid://dbv4evfnep2h2" path="res://Assets/Sprite Pack 1/1 - Mr. Man/Hurt (16 x 16).png" id="2_1ejlg"]
@@ -111,7 +111,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"puch",
-"speed": 5.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -146,6 +146,9 @@ size = Vector2(10, 13)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g7coh"]
 size = Vector2(6, 3)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e1t6w"]
+size = Vector2(5, 9)
+
 [node name="Player" type="CharacterBody2D"]
 collision_mask = 414
 script = ExtResource("1_8hfnq")
@@ -161,6 +164,7 @@ position = Vector2(0, 0.75)
 shape = SubResource("RectangleShape2D_3llny")
 
 [node name="remote" type="RemoteTransform2D" parent="."]
+visible = false
 
 [node name="Hurtbox" parent="." instance=ExtResource("6_oeqsy")]
 visible = false
@@ -184,6 +188,7 @@ target_position = Vector2(-8, 0)
 collision_mask = 4
 
 [node name="hit_head" type="Area2D" parent="."]
+position = Vector2(1, 0)
 collision_layer = 0
 collision_mask = 256
 
@@ -191,6 +196,16 @@ collision_mask = 256
 position = Vector2(0, -6.5)
 shape = SubResource("RectangleShape2D_g7coh")
 debug_color = Color(1, 0.835294, 0, 0.419608)
+
+[node name="HitPuch" type="Area2D" parent="."]
+visible = false
+collision_layer = 512
+collision_mask = 0
+
+[node name="collision" type="CollisionShape2D" parent="HitPuch"]
+position = Vector2(0.5, 0.5)
+shape = SubResource("RectangleShape2D_e1t6w")
+debug_color = Color(0.67451, 0.505882, 0, 0.419608)
 
 [connection signal="body_entered" from="Hurtbox" to="." method="_on_hurtbox_body_entered"]
 [connection signal="body_entered" from="hit_head" to="." method="_on_hit_head_body_entered"]

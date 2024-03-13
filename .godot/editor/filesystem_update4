@@ -9,3 +9,6 @@ res://world_01.tscn
 res://prefabs/particles_box.tscn
 res://prefabs/friend.tscn
 res://prefabs/player.tscn
+res://Scripts/Player.gd
+res://prefabs/enemy.tscn
+res://Scripts/enemy.gd

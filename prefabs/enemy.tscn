@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://cycuhveh2vmva"]
+[gd_scene load_steps=15 format=3 uid="uid://cycuhveh2vmva"]
 
 [ext_resource type="Texture2D" uid="uid://cbywb4caw154k" path="res://Assets/Sprite Pack 1/4 - Bushly/Idle (16 x 16).png" id="1_g3bt6"]
 [ext_resource type="Script" path="res://Scripts/enemy.gd" id="1_o1fno"]
@@ -185,10 +185,14 @@ size = Vector2(10, 8)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vacch"]
 size = Vector2(10, 5)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_25r7w"]
+size = Vector2(10, 11)
+
 [node name="enemy" type="CharacterBody2D" groups=["enemy"]]
 collision_layer = 4
 collision_mask = 3
 script = ExtResource("1_o1fno")
+pieces = PackedStringArray("res://Assets/pieces/enemy/piece1.png", "res://Assets/pieces/enemy/piece2.png", "res://Assets/pieces/enemy/piece1.png", "res://Assets/pieces/enemy/piece2.png")
 
 [node name="enemySprite" type="Sprite2D" parent="."]
 texture = ExtResource("1_g3bt6")
@@ -214,4 +218,14 @@ position = Vector2(0, -3.5)
 shape = SubResource("RectangleShape2D_vacch")
 debug_color = Color(1, 0, 0.129412, 0.419608)
 
+[node name="HitBody" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 512
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBody"]
+position = Vector2(0, 1.5)
+shape = SubResource("RectangleShape2D_25r7w")
+debug_color = Color(0.870588, 0, 0.207843, 0.419608)
+
 [connection signal="animation_finished" from="AnimationEnemy" to="." method="_on_animation_enemy_animation_finished"]
+[connection signal="area_entered" from="HitBody" to="." method="_on_hit_body_area_entered"]

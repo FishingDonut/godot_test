@@ -14,6 +14,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @onready var ray_right := $Knockback_right as RayCast2D
 @onready var ray_left := $Knockback_left as RayCast2D
 @onready var direction := 0
+@onready var hitPuch := $HitPuch as Area2D
 
 var is_jump := false
 var is_puch := false
@@ -41,8 +42,7 @@ func _physics_process(delta):
 	elif is_on_floor():
 		is_jump = false
 
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
+
 	direction = Input.get_axis("ui_left", "ui_right")
 	if direction:
 		velocity.x = direction * SPEED
@@ -54,19 +54,19 @@ func _physics_process(delta):
 	if knockback_vector != Vector2.ZERO:
 		velocity = knockback_vector
 
+	if Input.is_key_label_pressed(KEY_P):
+		_action_puch()
+
 	_set_state()
 	move_and_slide()
 
 
 func _on_hurtbox_body_entered(body):
 	if body.is_in_group("enemy"):
-		print("dano")
 		if ray_right.is_colliding():
 			take_damage(Vector2(-300, JUMP_VELOCITY * 0.2))
-			print("1")
 		if ray_left.is_colliding():
 			take_damage(Vector2(300, JUMP_VELOCITY * 0.2))
-			print("2")
 		if lifes <= 0:
 			queue_free()
 
@@ -104,3 +104,8 @@ func follow_camera(camera):
 func _on_hit_head_body_entered(body):
 	if body.has_method("break_sprite"):
 		body.break_sprite() 
+
+func _action_puch():
+	var tween = get_tree().create_tween()
+	tween.tween_property(hitPuch, "position", Vector2(animation.scale.x * 10, 0), 0.1)
+	tween.tween_property(hitPuch, "position", Vector2(0, 0), 0.1)

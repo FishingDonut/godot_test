@@ -34,6 +34,7 @@ project/assembly_name="Zeldinha"
 2d_physics/layer_7="hurbox"
 2d_physics/layer_8="trap"
 2d_physics/layer_9="hit_head"
+2d_physics/layer_10="hit_body_enemy"
 
 [rendering]
 

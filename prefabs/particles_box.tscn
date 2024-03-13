@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Scripts/brick_pieces.gd" id="1_4es7f"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_78cfo"]
-size = Vector2(5, 7)
+size = Vector2(2, 2)
 
 [node name="particles_box" type="RigidBody2D"]
 collision_layer = 0
