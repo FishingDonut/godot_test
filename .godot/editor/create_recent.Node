@@ -1,14 +1,14 @@
+CollisionShape2D
+RigidBody2D
+Marker2D
 Area2D
 Node2D
-CollisionShape2D
 Node
 Sprite2D
 VisibleOnScreenNotifier2D
-RigidBody2D
 AnimationPlayer
 CharacterBody2D
 StaticBody2D
 AnimatedSprite2D
 RayCast2D
 Camera2D
-RemoteTransform2D

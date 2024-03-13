@@ -1,7 +1,11 @@
-res://world_01.tscn
+res://prefabs/block_broken.tscn
 res://Scripts/friend.gd
 res://Scripts/Hitbox.gd
+res://prefabs/coin.tscn
+res://Scripts/solid_coin.tscn
+res://prefabs/solid_coin.tscn
+res://Scripts/block_broken.gd
+res://world_01.tscn
 res://prefabs/particles_box.tscn
-res://prefabs/block_broken.tscn
 res://prefabs/friend.tscn
 res://prefabs/player.tscn

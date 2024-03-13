@@ -1,14 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "2ekLmvO3xZlu3KhTfMNefMMgK4fCviHmRBZO5g3PvswGFckZFgbkODtmOWuIxF5ryq8UyZfVxUZWJNJtoRPM8g==",
+  "dgSpecHash": "IjkNo90h0G5d4hPAA+tDnzuTCkmL0Frl1JzZAVUOc1yKWOHU5/5sPzx4VgIKaIg5UE1ja88ZTwec5mY0bMeszg==",
   "success": true,
   "projectFilePath": "/home/icequs/Zeldinha/Zeldinha.csproj",
   "expectedPackageFiles": [
     "/home/icequs/.nuget/packages/godot.sourcegenerators/4.2.1/godot.sourcegenerators.4.2.1.nupkg.sha512",
     "/home/icequs/.nuget/packages/godotsharp/4.2.1/godotsharp.4.2.1.nupkg.sha512",
     "/home/icequs/.nuget/packages/godotsharpeditor/4.2.1/godotsharpeditor.4.2.1.nupkg.sha512",
-    "/home/icequs/.nuget/packages/microsoft.netcore.app.ref/6.0.27/microsoft.netcore.app.ref.6.0.27.nupkg.sha512",
-    "/home/icequs/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.27/microsoft.aspnetcore.app.ref.6.0.27.nupkg.sha512"
+    "/home/icequs/.nuget/packages/microsoft.netcore.app.ref/6.0.28/microsoft.netcore.app.ref.6.0.28.nupkg.sha512",
+    "/home/icequs/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.28/microsoft.aspnetcore.app.ref.6.0.28.nupkg.sha512"
   ],
   "logs": []
 }

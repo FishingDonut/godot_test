@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://dswry8ywg6c68"]
+
+[ext_resource type="PackedScene" uid="uid://cvcskd2hu5fgg" path="res://prefabs/coin.tscn" id="1_lajmn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yd2rp"]
+size = Vector2(14, 8)
+
+[node name="solid_coin" type="RigidBody2D"]
+collision_layer = 0
+collision_mask = 2
+lock_rotation = true
+
+[node name="coin" parent="." instance=ExtResource("1_lajmn")]
+
+[node name="collision" type="CollisionShape2D" parent="."]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_yd2rp")
+debug_color = Color(0.666667, 0.427451, 0, 0.419608)
