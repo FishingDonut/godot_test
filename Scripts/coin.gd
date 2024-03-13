@@ -25,7 +25,9 @@ func _on_body_shape_entered(body_rid, body, body_shape_index, local_shape_index)
 
 
 func _on_coin_animation_animation_finished():
-	queue_free()
+	var rigid_body = self.get_parent()
+	rigid_body.queue_free()
+	self.queue_free()
 
 
 func move_coin():
