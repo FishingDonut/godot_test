@@ -144,7 +144,7 @@ size = Vector2(6, 12.5)
 size = Vector2(10, 13)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g7coh"]
-size = Vector2(6, 3)
+size = Vector2(5, 3)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e1t6w"]
 size = Vector2(5, 9)
@@ -176,13 +176,11 @@ shape = SubResource("RectangleShape2D_j0836")
 debug_color = Color(0.976471, 0, 0.4, 0.419608)
 
 [node name="hit_head" type="Area2D" parent="."]
-visible = false
-position = Vector2(1, 0)
 collision_layer = 0
 collision_mask = 256
 
 [node name="collision" type="CollisionShape2D" parent="hit_head"]
-position = Vector2(0, -6.5)
+position = Vector2(0.5, -6.5)
 shape = SubResource("RectangleShape2D_g7coh")
 debug_color = Color(1, 0.835294, 0, 0.419608)
 

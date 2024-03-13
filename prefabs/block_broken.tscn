@@ -123,11 +123,6 @@ script = ExtResource("1_kv5yl")
 [node name="spawn_coin" type="Marker2D" parent="."]
 position = Vector2(0, -8)
 
-[node name="texture" type="Sprite2D" parent="."]
-texture = ExtResource("1_73d83")
-region_enabled = true
-region_rect = Rect2(16, 16, 16, 16)
-
 [node name="collision" type="CollisionShape2D" parent="."]
 visible = false
 shape = SubResource("RectangleShape2D_3f4fi")
@@ -137,3 +132,8 @@ debug_color = Color(0, 0.647059, 0.235294, 0.419608)
 libraries = {
 "": SubResource("AnimationLibrary_4nple")
 }
+
+[node name="texture" type="Sprite2D" parent="."]
+texture = ExtResource("1_73d83")
+region_enabled = true
+region_rect = Rect2(16, 16, 16, 16)
