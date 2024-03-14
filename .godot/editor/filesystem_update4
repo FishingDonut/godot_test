@@ -1,10 +1,9 @@
-res://prefabs/player.tscn
+res://world_01.tscn
 res://Scripts/friend.gd
 res://Scripts/Hitbox.gd
-res://Shaders/player.gdshader
-res://world_01.tscn
-res://Scripts/Player.gd
+res://test.gdshader
+res://Shaders/hit_flash.gdshader
+res://prefabs/player.tscn
 res://prefabs/enemy.tscn
-res://Scripts/world_01.gd
-res://water.gdshader
-res://water.tscn
+res://test.tscn
+res://Scripts/Player.gd

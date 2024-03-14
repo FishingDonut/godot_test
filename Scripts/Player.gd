@@ -69,15 +69,6 @@ func _physics_process(delta):
 	move_and_slide()
 
 
-func _on_hurtbox_body_entered(body):
-	if body.is_in_group("enemy"):
-		if ray_right.is_colliding():
-			take_damage(Vector2(-300, JUMP_VELOCITY * 0.2))
-		if ray_left.is_colliding():
-			take_damage(Vector2(300, JUMP_VELOCITY * 0.2))
-		if lifes <= 0:
-			queue_free()
-
 func take_damage(knock_force := Vector2.ZERO, duration := 0.5):
 	lifes -= 0
 
@@ -126,3 +117,16 @@ func effect_jump():
 	tween_animation.parallel().tween_property(sprite, "position", Vector2(0, 4), 0.0)
 	tween_animation.tween_property(sprite, "scale", Vector2(1*sprite.scale.x,1), 0.1)
 	tween_animation.parallel().tween_property(sprite, "position", Vector2(0, 0), 0.1)
+
+
+func _on_hurt_box_body_entered(body):
+	if body.is_in_group("enemy"):
+		if ray_right.is_colliding():
+			take_damage(Vector2(-300, JUMP_VELOCITY * 0.2))
+		elif ray_left.is_colliding():
+			take_damage(Vector2(300, JUMP_VELOCITY * 0.2))
+		else:
+			take_damage(Vector2(sprite.scale.x * -200, JUMP_VELOCITY * 0.2))
+			
+		if lifes <= 0:
+			queue_free()

@@ -183,7 +183,7 @@ _data = {
 size = Vector2(10, 8)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vacch"]
-size = Vector2(10, 5)
+size = Vector2(8, 5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_25r7w"]
 size = Vector2(10, 11)
@@ -194,34 +194,37 @@ collision_mask = 3
 script = ExtResource("1_o1fno")
 pieces = PackedStringArray("res://Assets/pieces/enemy/piece1.png", "res://Assets/pieces/enemy/piece2.png", "res://Assets/pieces/enemy/piece1.png", "res://Assets/pieces/enemy/piece2.png")
 
-[node name="enemySprite" type="Sprite2D" parent="."]
-texture = ExtResource("3_mbj2x")
+[node name="enemySprite" type="Sprite2D" parent="." groups=["enemy"]]
+texture = ExtResource("2_ws64c")
+hframes = 6
 
-[node name="AnimationEnemy" type="AnimationPlayer" parent="."]
+[node name="AnimationEnemy" type="AnimationPlayer" parent="." groups=["enemy"]]
 libraries = {
 "": SubResource("AnimationLibrary_hog41")
 }
 
-[node name="detectd_wall" type="RayCast2D" parent="."]
+[node name="detectd_wall" type="RayCast2D" parent="." groups=["enemy"]]
 target_position = Vector2(7, 0)
 collision_mask = 18
 
-[node name="enemyCollision" type="CollisionShape2D" parent="."]
+[node name="enemyCollision" type="CollisionShape2D" parent="." groups=["enemy"]]
+visible = false
 position = Vector2(0, 3)
 shape = SubResource("RectangleShape2D_edw8b")
 
-[node name="Hitbox" parent="." instance=ExtResource("6_57bru")]
+[node name="HitboxHead" parent="." groups=["enemy"] instance=ExtResource("6_57bru")]
 
-[node name="colission" type="CollisionShape2D" parent="Hitbox"]
+[node name="colission" type="CollisionShape2D" parent="HitboxHead" groups=["enemy"]]
 position = Vector2(0, -3.5)
 shape = SubResource("RectangleShape2D_vacch")
 debug_color = Color(1, 0, 0.129412, 0.419608)
 
-[node name="HitBody" type="Area2D" parent="."]
+[node name="HitBody" type="Area2D" parent="." groups=["enemy"]]
 collision_layer = 0
 collision_mask = 512
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBody"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBody" groups=["enemy"]]
+visible = false
 position = Vector2(0, 1.5)
 shape = SubResource("RectangleShape2D_25r7w")
 debug_color = Color(0.870588, 0, 0.207843, 0.419608)
