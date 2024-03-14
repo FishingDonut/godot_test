@@ -7,7 +7,8 @@ const JUMP_VELOCITY = -400.0
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
-@onready var animation := $PlayerAnimated as AnimatedSprite2D
+@onready var animation := $AnimationPlayer as AnimationPlayer
+@onready var sprite := $SpritePlayer as Sprite2D
 @onready var remote := $remote as RemoteTransform2D
 @export var lifes := 6
 @onready var knockback_vector := Vector2.ZERO
@@ -19,6 +20,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var is_jump := false
 var is_puch := false
 var is_hurt := false
+var is_kick := false
 
 func blink():
 	var tweenPlayer = get_tree().create_tween()
@@ -39,15 +41,21 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 		is_jump = true
+		effect_jump()
+	elif Input.is_action_just_pressed("ui_accept") and !is_on_floor():
+		is_kick = true
+		velocity.y = (gravity * delta) * 10
 	elif is_on_floor():
+		if is_jump:
+			pass
 		is_jump = false
+		is_kick = false
 
 
 	direction = Input.get_axis("ui_left", "ui_right")
 	if direction:
 		velocity.x = direction * SPEED
-		animation.scale.x = direction
-			
+		sprite.scale.x = direction
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		
@@ -71,13 +79,13 @@ func _on_hurtbox_body_entered(body):
 			queue_free()
 
 func take_damage(knock_force := Vector2.ZERO, duration := 0.5):
-	lifes -= 1
+	lifes -= 0
 
-	var tween_knock = get_tree().create_tween().parallel()
+	var tween_knock = get_tree().create_tween()
 	knockback_vector = knock_force
 	tween_knock.tween_property(self, "knockback_vector", Vector2.ZERO, duration)
-	animation.modulate = Color(1, 0, 0, 1)
-	tween_knock.tween_property(animation, "modulate", Color(1, 1, 1, 1), duration)
+	sprite.modulate = Color(1, 0, 0, 1)
+	tween_knock.tween_property(sprite, "modulate", Color(1, 1, 1, 1), duration)
 	is_hurt = true
 	await get_tree().create_timer(.4).timeout
 	is_hurt = false
@@ -87,6 +95,8 @@ func _set_state():
 	
 	if is_hurt:
 		state = "hurt"
+	elif !is_on_floor() and is_kick:
+		state = "jump_kick"
 	elif !is_on_floor():
 		state = "jump"
 	elif direction != 0:
@@ -107,5 +117,12 @@ func _on_hit_head_body_entered(body):
 
 func _action_puch():
 	var tween = get_tree().create_tween()
-	tween.tween_property(hitPuch, "position", Vector2(animation.scale.x * 10, 0), 0.1)
+	tween.tween_property(hitPuch, "position", Vector2(sprite.scale.x * 10, 0), 0.1)
 	tween.tween_property(hitPuch, "position", Vector2(0, 0), 0.1)
+
+func effect_jump():
+	var tween_animation = create_tween()
+	tween_animation.tween_property(sprite, "scale", Vector2(1.4 *sprite.scale.x , 0.6), 0.0)
+	tween_animation.parallel().tween_property(sprite, "position", Vector2(0, 4), 0.0)
+	tween_animation.tween_property(sprite, "scale", Vector2(1*sprite.scale.x,1), 0.1)
+	tween_animation.parallel().tween_property(sprite, "position", Vector2(0, 0), 0.1)

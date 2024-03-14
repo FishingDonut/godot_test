@@ -195,8 +195,7 @@ script = ExtResource("1_o1fno")
 pieces = PackedStringArray("res://Assets/pieces/enemy/piece1.png", "res://Assets/pieces/enemy/piece2.png", "res://Assets/pieces/enemy/piece1.png", "res://Assets/pieces/enemy/piece2.png")
 
 [node name="enemySprite" type="Sprite2D" parent="."]
-texture = ExtResource("1_g3bt6")
-hframes = 3
+texture = ExtResource("3_mbj2x")
 
 [node name="AnimationEnemy" type="AnimationPlayer" parent="."]
 libraries = {
