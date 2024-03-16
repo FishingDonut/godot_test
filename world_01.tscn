@@ -704,5 +704,6 @@ horizontal_alignment = 1
 
 [node name="Spawn_enemy" parent="." instance=ExtResource("22_kqu86")]
 position = Vector2(103, -81)
+active_spawn = false
 
 [connection signal="timeout" from="hud/Control/clock_time" to="hud/Control" method="_on_clock_time_timeout"]

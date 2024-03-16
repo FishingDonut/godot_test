@@ -16,7 +16,6 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @onready var ray_right := $Knockback_right as RayCast2D
 @onready var ray_left := $Knockback_left as RayCast2D
 @onready var hitPuch := $HitPuch as Area2D
-@onready var smoke = $Smoke as AnimatedSprite2D
 
 @onready var direction := 0
 
@@ -52,12 +51,7 @@ func _physics_process(delta):
 	if direction:
 		velocity.x = direction * SPEED
 		sprite.scale.x = direction
-		if is_on_floor():
-			smoke.play("run")
-			smoke.scale.x = direction
-			smoke.position.x = -(8 * direction)
 	else:
-		smoke.play("idle")
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		
 	if knockback_vector != Vector2.ZERO:
