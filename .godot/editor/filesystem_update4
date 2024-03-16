@@ -1,9 +1,8 @@
-res://world_01.tscn
+res://prefabs/player.tscn
 res://Scripts/friend.gd
 res://Scripts/Hitbox.gd
-res://test.gdshader
 res://Shaders/hit_flash.gdshader
-res://prefabs/player.tscn
-res://prefabs/enemy.tscn
-res://test.tscn
+res://Shaders/move_clouds.gdshader
 res://Scripts/Player.gd
+res://world_01.tscn
+res://prefabs/coin.tscn

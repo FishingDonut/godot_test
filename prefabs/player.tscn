@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://d0a40t4jyanrm"]
+[gd_scene load_steps=29 format=3 uid="uid://d0a40t4jyanrm"]
 
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_8hfnq"]
 [ext_resource type="Texture2D" uid="uid://dbv4evfnep2h2" path="res://Assets/Sprite Pack 1/1 - Mr. Man/Hurt (16 x 16).png" id="2_1ejlg"]
@@ -7,6 +7,69 @@
 [ext_resource type="Texture2D" uid="uid://b4lrnmotgqqud" path="res://Assets/Sprite Pack 1/1 - Mr. Man/Punching (16 x 16).png" id="4_7mfl2"]
 [ext_resource type="Texture2D" uid="uid://cmlyhv3uv41bk" path="res://Assets/Sprite Pack 1/1 - Mr. Man/Run (16 x 16).png" id="5_07g44"]
 [ext_resource type="Texture2D" uid="uid://c6wfay4h4t7fh" path="res://Assets/Sprite Pack 1/1 - Mr. Man/Flying_Kick (16 x 16).png" id="7_6svsg"]
+[ext_resource type="Texture2D" uid="uid://dmab8h8rdhwmx" path="res://Assets/Mini FX, Items & UI/Effects/Dust (16 x 16).png" id="8_55v5h"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rx42h"]
+atlas = ExtResource("8_55v5h")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ukhp8"]
+atlas = ExtResource("8_55v5h")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_43hbg"]
+atlas = ExtResource("8_55v5h")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wfg8r"]
+atlas = ExtResource("8_55v5h")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u7hkq"]
+atlas = ExtResource("8_55v5h")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6xina"]
+atlas = ExtResource("8_55v5h")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jqtb7"]
+atlas = ExtResource("8_55v5h")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_v0ybs"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rx42h")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ukhp8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_43hbg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wfg8r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u7hkq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6xina")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jqtb7")
+}],
+"loop": true,
+"name": &"run",
+"speed": 8.0
+}]
 
 [sub_resource type="Animation" id="Animation_3lan7"]
 length = 0.001
@@ -429,6 +492,11 @@ script = ExtResource("1_8hfnq")
 texture = ExtResource("2_4jndw")
 hframes = 4
 
+[node name="Smoke" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_v0ybs")
+animation = &"idle"
+autoplay = "idle"
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_wj7cs")
@@ -436,6 +504,7 @@ libraries = {
 autoplay = "idle"
 
 [node name="PlayersCollision" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(0, 0.75)
 shape = SubResource("RectangleShape2D_3llny")
 
@@ -463,16 +532,19 @@ shape = SubResource("RectangleShape2D_e1t6w")
 debug_color = Color(0.67451, 0.505882, 0, 0.419608)
 
 [node name="Knockback_left" type="RayCast2D" parent="."]
+visible = false
 position = Vector2(-4, 0)
 target_position = Vector2(-4, 0)
 collision_mask = 4
 
 [node name="Knockback_right" type="RayCast2D" parent="."]
+visible = false
 position = Vector2(4, 0)
 target_position = Vector2(4, 0)
 collision_mask = 4
 
 [node name="HurtBox" type="Area2D" parent="."]
+visible = false
 collision_layer = 64
 collision_mask = 4
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://bsel0otsoo5fq"]
+[gd_scene load_steps=29 format=3 uid="uid://bsel0otsoo5fq"]
 
 [ext_resource type="Texture2D" uid="uid://ditsy18whmiak" path="res://Assets/Seasonal Tilesets/1 - Grassland/Terrain (16 x 16).png" id="1_80vbw"]
 [ext_resource type="Script" path="res://Scripts/world_01.gd" id="1_k45nb"]
@@ -16,7 +16,10 @@
 [ext_resource type="PackedScene" uid="uid://mk8arh7i2kvn" path="res://prefabs/block_broken.tscn" id="16_1dht2"]
 [ext_resource type="PackedScene" uid="uid://cc0xcf2wgpsus" path="res://prefabs/friend.tscn" id="16_b4mtt"]
 [ext_resource type="PackedScene" uid="uid://cycuhveh2vmva" path="res://prefabs/enemy.tscn" id="17_4rohc"]
+[ext_resource type="Texture2D" uid="uid://qkj2rdxvclmv" path="res://Assets/Mini FX, Items & UI/Mini UI/Coin_counter_(8 x 8).png" id="18_cjlux"]
+[ext_resource type="Script" path="res://Scripts/hud_manager.gd" id="18_lqw53"]
 [ext_resource type="PackedScene" uid="uid://d0a40t4jyanrm" path="res://prefabs/player.tscn" id="18_uufa1"]
+[ext_resource type="FontFile" uid="uid://caafswwrxmbg7" path="res://fonts/minecraft/Minecraft.ttf" id="19_swy3v"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ndrb6"]
 
@@ -476,6 +479,9 @@ distance = 580
 [node name="Player" parent="." instance=ExtResource("18_uufa1")]
 position = Vector2(-3, 25)
 
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(2, 2)
+
 [node name="Coins" type="Node2D" parent="."]
 position = Vector2(8, 0)
 
@@ -567,9 +573,6 @@ position = Vector2(361, -43)
 [node name="enemy9" parent="Enemies" instance=ExtResource("17_4rohc")]
 position = Vector2(447, 7)
 
-[node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(2, 2)
-
 [node name="block" type="Node2D" parent="."]
 
 [node name="block_brick" parent="block" instance=ExtResource("16_1dht2")]
@@ -603,3 +606,72 @@ pieces = PackedStringArray("res://Assets/pieces.png", "res://Assets/pieces.png",
 [node name="block_brick8" parent="block" instance=ExtResource("16_1dht2")]
 position = Vector2(280, -23)
 pieces = PackedStringArray("res://Assets/pieces.png", "res://Assets/pieces.png", "res://Assets/pieces.png", "res://Assets/pieces.png")
+
+[node name="hud" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="hud"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("18_lqw53")
+
+[node name="ContainerMargin" type="MarginContainer" parent="hud/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="CoinContainer" type="HBoxContainer" parent="hud/Control/ContainerMargin"]
+layout_mode = 2
+
+[node name="Coins_icon" type="TextureRect" parent="hud/Control/ContainerMargin/CoinContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource("18_cjlux")
+
+[node name="Coins_counter" type="Label" parent="hud/Control/ContainerMargin/CoinContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("19_swy3v")
+theme_override_font_sizes/font_size = 16
+text = "0000"
+
+[node name="ScoreContainer" type="HBoxContainer" parent="hud/Control/ContainerMargin"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+
+[node name="ScoreLabel" type="Label" parent="hud/Control/ContainerMargin/ScoreContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("19_swy3v")
+theme_override_font_sizes/font_size = 16
+text = "score: "
+horizontal_alignment = 1
+
+[node name="ScorePoints" type="Label" parent="hud/Control/ContainerMargin/ScoreContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("19_swy3v")
+theme_override_font_sizes/font_size = 16
+text = "000000"
+horizontal_alignment = 1

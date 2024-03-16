@@ -7,29 +7,24 @@ const JUMP_VELOCITY = -400.0
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
+@export var lifes := 6
+
 @onready var animation := $AnimationPlayer as AnimationPlayer
 @onready var sprite := $SpritePlayer as Sprite2D
 @onready var remote := $remote as RemoteTransform2D
-@export var lifes := 6
 @onready var knockback_vector := Vector2.ZERO
 @onready var ray_right := $Knockback_right as RayCast2D
 @onready var ray_left := $Knockback_left as RayCast2D
-@onready var direction := 0
 @onready var hitPuch := $HitPuch as Area2D
+@onready var smoke = $Smoke as AnimatedSprite2D
+
+@onready var direction := 0
 
 var is_jump := false
 var is_puch := false
 var is_hurt := false
 var is_kick := false
 
-func blink():
-	var tweenPlayer = get_tree().create_tween()
-	
-	if !is_on_floor():
-		tweenPlayer.tween_property(self, "modulate", Color(1, 1, 1), 0.15)
-	else:
-		tweenPlayer.tween_property(self, "modulate", Color(1,0, 0), 1).set_delay(1)
-		tweenPlayer.tween_property(self, "modulate", Color(0,0, 1), 1).set_delay(1)
 
 func _physics_process(delta):
 	#blink()
@@ -56,7 +51,12 @@ func _physics_process(delta):
 	if direction:
 		velocity.x = direction * SPEED
 		sprite.scale.x = direction
+		if is_on_floor():
+			smoke.play("run")
+			smoke.scale.x = direction
+			smoke.position.x = -(8 * direction)
 	else:
+		smoke.play("idle")
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		
 	if knockback_vector != Vector2.ZERO:

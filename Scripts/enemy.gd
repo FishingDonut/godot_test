@@ -2,6 +2,8 @@ extends CharacterBody2D
 
 @export var SPEED = 20.0
 @export var pieces : PackedStringArray
+@export var score := 200
+
 const JUMP_VELOCITY = -200.0
 const box_pieces = preload("res://prefabs/particles_box.tscn")
 
@@ -75,6 +77,7 @@ func break_sprite():
 		piece_instance.global_position = global_position
 		piece_instance.apply_impulse(Vector2(randi_range(-impulse, impulse), randi_range(-impulse, -impulse * 2)))
 	queue_free()
+	Globals.score += score
 	
 
 func _on_hit_body_area_entered(area):
