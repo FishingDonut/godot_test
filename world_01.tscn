@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://bsel0otsoo5fq"]
+[gd_scene load_steps=31 format=3 uid="uid://bsel0otsoo5fq"]
 
 [ext_resource type="Texture2D" uid="uid://ditsy18whmiak" path="res://Assets/Seasonal Tilesets/1 - Grassland/Terrain (16 x 16).png" id="1_80vbw"]
 [ext_resource type="Script" path="res://Scripts/world_01.gd" id="1_k45nb"]
@@ -20,6 +20,8 @@
 [ext_resource type="Script" path="res://Scripts/hud_manager.gd" id="18_lqw53"]
 [ext_resource type="PackedScene" uid="uid://d0a40t4jyanrm" path="res://prefabs/player.tscn" id="18_uufa1"]
 [ext_resource type="FontFile" uid="uid://caafswwrxmbg7" path="res://fonts/minecraft/Minecraft.ttf" id="19_swy3v"]
+[ext_resource type="Texture2D" uid="uid://q6nva4yagycj" path="res://Assets/Mini FX, Items & UI/Mini UI/Timer_Outlined(8 x 8).png" id="21_ojpxx"]
+[ext_resource type="PackedScene" uid="uid://c8p34j1b6ej5k" path="res://prefabs/spawn_enemy.tscn" id="22_kqu86"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ndrb6"]
 
@@ -618,6 +620,9 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("18_lqw53")
 
+[node name="clock_time" type="Timer" parent="hud/Control"]
+autostart = true
+
 [node name="ContainerMargin" type="MarginContainer" parent="hud/Control"]
 layout_mode = 1
 anchors_preset = 15
@@ -649,6 +654,27 @@ theme_override_fonts/font = ExtResource("19_swy3v")
 theme_override_font_sizes/font_size = 16
 text = "0000"
 
+[node name="TimeContainer" type="HBoxContainer" parent="hud/Control/ContainerMargin"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+
+[node name="Time_icon" type="TextureRect" parent="hud/Control/ContainerMargin/TimeContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource("21_ojpxx")
+
+[node name="Time_counter" type="Label" parent="hud/Control/ContainerMargin/TimeContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("19_swy3v")
+theme_override_font_sizes/font_size = 16
+text = "000000"
+
 [node name="ScoreContainer" type="HBoxContainer" parent="hud/Control/ContainerMargin"]
 layout_mode = 2
 size_flags_horizontal = 8
@@ -675,3 +701,8 @@ theme_override_fonts/font = ExtResource("19_swy3v")
 theme_override_font_sizes/font_size = 16
 text = "000000"
 horizontal_alignment = 1
+
+[node name="Spawn_enemy" parent="." instance=ExtResource("22_kqu86")]
+position = Vector2(103, -81)
+
+[connection signal="timeout" from="hud/Control/clock_time" to="hud/Control" method="_on_clock_time_timeout"]

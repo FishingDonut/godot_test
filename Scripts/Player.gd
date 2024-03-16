@@ -25,6 +25,7 @@ var is_puch := false
 var is_hurt := false
 var is_kick := false
 
+signal player_has_died
 
 func _physics_process(delta):
 	#blink()
@@ -70,7 +71,7 @@ func _physics_process(delta):
 
 
 func take_damage(knock_force := Vector2.ZERO, duration := 0.5):
-	lifes -= 0
+	lifes -= 1
 
 	var tween_knock = get_tree().create_tween()
 	knockback_vector = knock_force
@@ -109,7 +110,7 @@ func _on_hit_head_body_entered(body):
 func _action_puch():
 	var tween = get_tree().create_tween()
 	tween.tween_property(hitPuch, "position", Vector2(sprite.scale.x * 10, 0), 0.1)
-	tween.tween_property(hitPuch, "position", Vector2(0, 0), 0.1)
+	tween.tween_property(hitPuch, "position", Vector2(0, 0), 0.1)  
 
 func effect_jump():
 	var tween_animation = create_tween()
@@ -130,3 +131,4 @@ func _on_hurt_box_body_entered(body):
 			
 		if lifes <= 0:
 			queue_free()
+			emit_signal("player_has_died")
