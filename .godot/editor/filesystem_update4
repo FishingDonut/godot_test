@@ -1,12 +1,10 @@
-res://prefabs/player.tscn
+res://Scripts/menu_layer.gd
+res://prefabs/menu_layer.tscn
 res://Scripts/friend.gd
 res://Scripts/Hitbox.gd
 res://Shaders/hit_flash.gdshader
 res://Shaders/move_clouds.gdshader
-res://Scripts/Player.gd
 res://world_01.tscn
-res://prefabs/coin.tscn
-res://prefabs/spawn_enemy.tscn
-res://prefabs/block_broken.tscn
-res://Scripts/spawn_enemy.gd
-res://Scripts/coin.gd
+res://prefabs/player.tscn
+res://prefabs/make_ghost.tscn
+res://prefabs/ghost.tscn
