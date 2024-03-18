@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://bsel0otsoo5fq"]
+[gd_scene load_steps=32 format=3 uid="uid://bsel0otsoo5fq"]
 
 [ext_resource type="Texture2D" uid="uid://ditsy18whmiak" path="res://Assets/Seasonal Tilesets/1 - Grassland/Terrain (16 x 16).png" id="1_80vbw"]
 [ext_resource type="Script" path="res://Scripts/world_01.gd" id="1_k45nb"]
@@ -22,6 +22,7 @@
 [ext_resource type="FontFile" uid="uid://caafswwrxmbg7" path="res://fonts/minecraft/Minecraft.ttf" id="19_swy3v"]
 [ext_resource type="Texture2D" uid="uid://q6nva4yagycj" path="res://Assets/Mini FX, Items & UI/Mini UI/Timer_Outlined(8 x 8).png" id="21_ojpxx"]
 [ext_resource type="PackedScene" uid="uid://c8p34j1b6ej5k" path="res://prefabs/spawn_enemy.tscn" id="22_kqu86"]
+[ext_resource type="PackedScene" uid="uid://cnkdk8tqvolj2" path="res://prefabs/menu_layer.tscn" id="23_h0und"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ndrb6"]
 
@@ -705,5 +706,7 @@ horizontal_alignment = 1
 [node name="Spawn_enemy" parent="." instance=ExtResource("22_kqu86")]
 position = Vector2(103, -81)
 active_spawn = false
+
+[node name="MenuLayer" parent="." instance=ExtResource("23_h0und")]
 
 [connection signal="timeout" from="hud/Control/clock_time" to="hud/Control" method="_on_clock_time_timeout"]

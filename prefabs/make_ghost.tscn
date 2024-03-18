@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://hm7s7i3f61k2"]
+
+[ext_resource type="Script" path="res://Scripts/make_ghost.gd" id="1_npae6"]
+
+[node name="MakeGhost2d" type="Node2D"]
+script = ExtResource("1_npae6")

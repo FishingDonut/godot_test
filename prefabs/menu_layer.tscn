@@ -1,0 +1,44 @@
+[gd_scene load_steps=5 format=3 uid="uid://cnkdk8tqvolj2"]
+
+[ext_resource type="Script" path="res://Scripts/menu_layer.gd" id="1_805ru"]
+[ext_resource type="Theme" uid="uid://ehwhmfy7nxi0" path="res://Canvas_Theme/menu_layer_buttons.tres" id="1_gvpps"]
+
+[sub_resource type="InputEventAction" id="InputEventAction_74syj"]
+action = &"esc"
+
+[sub_resource type="Shortcut" id="Shortcut_8l4s0"]
+events = [SubResource("InputEventAction_74syj")]
+
+[node name="MenuLayer" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_805ru")
+
+[node name="bg_menu" type="ColorRect" parent="."]
+modulate = Color(0.203922, 0.203922, 0.203922, 0.470588)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ContainerRow" type="VBoxContainer" parent="."]
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_gvpps")
+
+[node name="resume" type="Button" parent="ContainerRow"]
+layout_mode = 2
+theme = ExtResource("1_gvpps")
+shortcut = SubResource("Shortcut_8l4s0")
+text = "RESUME"
+
+[node name="exit" type="Button" parent="ContainerRow"]
+layout_mode = 2
+text = "EXIT"
+
+[connection signal="pressed" from="ContainerRow/resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="ContainerRow/exit" to="." method="_on_exit_pressed"]

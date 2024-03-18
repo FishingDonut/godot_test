@@ -16,6 +16,8 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @onready var ray_right := $Knockback_right as RayCast2D
 @onready var ray_left := $Knockback_left as RayCast2D
 @onready var hitPuch := $HitPuch as Area2D
+@onready var make_ghost_2d = $MakeGhost2d
+
 
 @onready var direction := 0
 
@@ -27,8 +29,8 @@ var is_kick := false
 signal player_has_died
 
 func _physics_process(delta):
-	#blink()
-	# Add the gravity.
+	make_ghost_2d.sprite = sprite
+	
 	if not is_on_floor():
 		velocity.y += gravity * delta
 		
@@ -50,7 +52,10 @@ func _physics_process(delta):
 	direction = Input.get_axis("ui_left", "ui_right")
 	if direction:
 		velocity.x = direction * SPEED
-		sprite.scale.x = direction
+		if direction > 0:
+			sprite.flip_h = false
+		elif direction < 0:
+			sprite.flip_h = true
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		

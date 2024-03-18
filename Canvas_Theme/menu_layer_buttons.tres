@@ -1,0 +1,23 @@
+[gd_resource type="Theme" load_steps=7 format=3 uid="uid://ehwhmfy7nxi0"]
+
+[ext_resource type="FontFile" uid="uid://caafswwrxmbg7" path="res://fonts/minecraft/Minecraft.ttf" id="1_pqj68"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ud0wa"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5f3ff"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vkef7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_heigg"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kumie"]
+
+[resource]
+Button/colors/font_focus_color = Color(0.94902, 0.94902, 0, 1)
+Button/font_sizes/font_size = 25
+Button/fonts/font = ExtResource("1_pqj68")
+Button/styles/disabled = SubResource("StyleBoxEmpty_ud0wa")
+Button/styles/focus = SubResource("StyleBoxEmpty_5f3ff")
+Button/styles/hover = SubResource("StyleBoxEmpty_vkef7")
+Button/styles/normal = SubResource("StyleBoxEmpty_heigg")
+Button/styles/pressed = SubResource("StyleBoxEmpty_kumie")

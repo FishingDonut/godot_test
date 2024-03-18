@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://d0a40t4jyanrm"]
+[gd_scene load_steps=21 format=3 uid="uid://d0a40t4jyanrm"]
 
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_8hfnq"]
 [ext_resource type="Texture2D" uid="uid://dbv4evfnep2h2" path="res://Assets/Sprite Pack 1/1 - Mr. Man/Hurt (16 x 16).png" id="2_1ejlg"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://b4lrnmotgqqud" path="res://Assets/Sprite Pack 1/1 - Mr. Man/Punching (16 x 16).png" id="4_7mfl2"]
 [ext_resource type="Texture2D" uid="uid://cmlyhv3uv41bk" path="res://Assets/Sprite Pack 1/1 - Mr. Man/Run (16 x 16).png" id="5_07g44"]
 [ext_resource type="Texture2D" uid="uid://c6wfay4h4t7fh" path="res://Assets/Sprite Pack 1/1 - Mr. Man/Flying_Kick (16 x 16).png" id="7_6svsg"]
+[ext_resource type="PackedScene" uid="uid://hm7s7i3f61k2" path="res://prefabs/make_ghost.tscn" id="8_b5db4"]
 
 [sub_resource type="Animation" id="Animation_3lan7"]
 length = 0.001
@@ -425,7 +426,10 @@ size = Vector2(12, 13)
 collision_mask = 414
 script = ExtResource("1_8hfnq")
 
+[node name="MakeGhost2d" parent="." instance=ExtResource("8_b5db4")]
+
 [node name="SpritePlayer" type="Sprite2D" parent="."]
+z_index = 1
 texture = ExtResource("2_4jndw")
 hframes = 4
 
